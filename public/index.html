@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: #444;
+    margin-bottom: 1em;
+    animation: slideIn 1s ease-in-out;
+}
+
+.file-label {
+    display: block;
+    margin: 1em 0;
+    padding: 1em;
+    background: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.file-label:hover {
+    background: #2575fc;
+}
+
+.file-label input {
+    display: none;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background: #6a11cb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Your Image</h1>
+        <form id="upload-form" action="http://localhost:5000/api/v1/users/image" method="POST" enctype="multipart/form-data">
+            <label for="file-input" class="file-label">
+                Choose Image
+                <input type="file" id="file-input" name="Image" accept="image/*" required>
+            </label>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+   <script>
+     
+
+   </script>
+</body>
+</html>
