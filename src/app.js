@@ -26,8 +26,6 @@ app.use(express.static("public"))   // access the file present in public
 
 app.use(cookieParser())             
 
-app.use(cors({
-    origin: 'https://latest-project-2.onrender.com'
-  }), userRouter);
+app.use("/api/v1/users", userRouter);
 
 export { app };
